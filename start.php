@@ -22,6 +22,7 @@ elgg_register_event_handler('init', 'system', __NAMESPACE__ . '\\init');
 elgg_register_event_handler('pagesetup', 'system', __NAMESPACE__ . '\\pagesetup');
 
 function init() {
+	
 	elgg_register_library('events:upgrades', __DIR__ . '/lib/upgrades.php');
 	
 	elgg_extend_view('notifications/subscriptions/personal', 'core/settings/calendar/notifications');

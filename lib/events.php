@@ -117,13 +117,13 @@ function add_to_calendar($event, $type, $params) {
 	if (!$methods) {
 		return true;
 	}
-	
+
 	$owner = $event->getOwnerEntity();
 	$owner_link = elgg_view('output/url', array(
 		'text' => $owner->name,
 		'href' => $owner->getURL()
 	));
-	
+
 	$in_group = '';
 	$in_group_link = '';
 	$container = $event->getContainerEntity();
@@ -135,7 +135,7 @@ function add_to_calendar($event, $type, $params) {
 		$in_group = elgg_echo('events:notify:subject:ingroup', array($container->name));
 		$in_group_link = elgg_echo('events:notify:subject:ingroup', array($container_link));
 	}
-	
+
 	$event_link = elgg_view('output/url', array(
 		'text' => $event->title,
 		'href' => $event->getURL()
@@ -146,7 +146,7 @@ function add_to_calendar($event, $type, $params) {
 		$in_group,
 		$owner->name
 	));
-	
+
 	$timezone = Util::getClientTimezone($user);
 
 	$message = elgg_echo('event:notify:addtocal:message', array(
@@ -166,7 +166,7 @@ function add_to_calendar($event, $type, $params) {
 	);
 	$subject = elgg_trigger_plugin_hook('events_ui', 'subject:addtocal', $params, $subject);
 	$message = elgg_trigger_plugin_hook('events_ui', 'message:addtocal', $params, $message);
-	
+
 	$params = array();
 	if ($event->canComment($user->guid)) {
 		$params = array('entity' => $event);

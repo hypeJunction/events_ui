@@ -34,7 +34,7 @@ function page_handler($page) {
 	elgg_load_js('fullcalendar');
 	elgg_load_js('events-ui');
 	elgg_load_js('events/timezone');
-	elgg_load_js('jquery.form');
+	elgg_require_js('jquery.form');
 	elgg_load_js('moment.js');
 
 	elgg_load_css('lightbox');
@@ -135,7 +135,7 @@ function event_pagehandler($page) {
 	elgg_load_js('fullcalendar');
 	elgg_load_js('events-ui');
 	elgg_load_js('events/timezone');
-	elgg_load_js('jquery.form');
+	elgg_require_js('jquery.form');
 	elgg_load_js('moment.js');
 
 	elgg_load_css('lightbox');
